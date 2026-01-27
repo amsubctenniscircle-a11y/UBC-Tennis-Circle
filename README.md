@@ -1,1 +1,1 @@
-# UBC Tennis Club Website
+# UBC Tennis Circle Website

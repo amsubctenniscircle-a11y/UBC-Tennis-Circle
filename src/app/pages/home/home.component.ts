@@ -35,7 +35,7 @@ import { DataService } from '../../services/data.service';
         Join the Circle
       </h1>
       <p class="mt-4 text-white text-lg md:text-2xl opacity-90 max-w-2xl drop-shadow-md">
-        The Largest Tennis Club on Campus
+        The Largest Tennis Club at UBC
       </p>
 
       <div class="mt-8 flex flex-col sm:flex-row gap-6">

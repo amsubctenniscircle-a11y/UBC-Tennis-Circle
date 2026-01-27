@@ -1,1 +1,1 @@
-# ubc_tc
+# UBC Tennis Club Website

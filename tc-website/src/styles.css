@@ -1,0 +1,337 @@
+@import "tailwindcss";
+
+/* Global theme and base styles */
+:root {
+    --ubc-deep-blue: #0b1a2e;
+    /* Dark navy */
+    --ubc-blue-700: #1a365d;
+    /* Deep tennis blue */
+    --ubc-blue-600: #1d4ed8;
+    /* Primary blue */
+    --ubc-blue-500: #2563eb;
+    /* Accent blue */
+    --ubc-blue-300: #60a5fa;
+    /* Light accent blue */
+    --ubc-surface: #ffffff;
+    /* White surface */
+    --ubc-text: #0b1a2e;
+    /* Dark text */
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--ubc-surface);
+    color: var(--ubc-text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+        Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* CLEAN HERO (Replit-style) */
+
+.hero-title-clean {
+    font-size: clamp(2.25rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--ubc-deep-blue);
+    line-height: 1.15;
+}
+
+.hero-subtitle-clean {
+    font-size: 1.05rem;
+    color: rgba(11, 26, 46, 0.75);
+    max-width: 480px;
+}
+
+.hero-media img {
+    width: 100%;
+    max-width: 520px;
+    margin-left: auto;
+}
+
+/* Utility helpers */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.btn-cta {
+    background: var(--ubc-blue-600);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: transform 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.btn-primary {
+    background-color: var(--ubc-blue-600);
+    color: white;
+    font-weight: 600;
+    transition: all 200ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-weight: 600;
+    transition: all 200ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--ubc-deep-blue);
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid rgba(29, 78, 216, 0.12);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(26, 54, 93, .18);
+}
+
+/* Hero Stats Cards */
+.card-hero-stat {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+    transition: all 300ms ease;
+}
+
+.card-hero-stat:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon-hero {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 300ms ease;
+}
+
+.card-hero-stat:hover .stat-icon-hero {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Stats section styles */
+.section-blue {
+    background: linear-gradient(135deg, var(--ubc-blue-700), var(--ubc-blue-500));
+    color: #ffffff;
+}
+
+.section-white {
+    background: #ffffff;
+}
+
+.card-ghost {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+    transition: all 300ms ease;
+}
+
+.card-ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.15);
+}
+
+.stat-icon {
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    transition: all 300ms ease;
+}
+
+.card-ghost:hover .stat-icon {
+    background: rgba(37, 99, 235, 0.25);
+    transform: scale(1.1);
+}
+
+/* Sponsors infinite scroller with drag support */
+.sponsors-scroller {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    cursor: grab;
+    user-select: none;
+}
+
+.sponsors-scroller:active {
+    cursor: grabbing;
+}
+
+.sponsors-track {
+    display: flex;
+    width: max-content;
+    animation: sponsors-scroll 40s linear infinite;
+}
+
+.sponsors-track:hover {
+    animation-play-state: paused;
+}
+
+.sponsors-group {
+    display: flex;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.sponsor-card {
+    min-width: 140px;
+    height: 80px;
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    border-radius: 0.75rem;
+    flex-shrink: 0;
+    transition: all 300ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.sponsor-card:hover {
+    background: rgba(37, 99, 235, 0.05);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.15);
+}
+
+.sponsor-logo {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Specific adjustment: make Pacific Poke logo ~30% smaller */
+.sponsor-logo--pp-small {
+    height: 50%;
+}
+
+/* Make select logos appear larger inside their cards */
+.sponsor-logo--big {
+    transform: scale(1.2);
+}
+
+/* Extra-large bump for select marks */
+.sponsor-logo--xl {
+    transform: scale(1.35);
+}
+
+/* Extra-extra-large bump for select marks */
+.sponsor-logo--xxl {
+    transform: scale(1.5);
+}
+
+/* Slightly smaller logos */
+.sponsor-logo--sm {
+    transform: scale(0.9);
+}
+
+@keyframes sponsors-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 1rem));
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sponsors-group {
+        gap: 1rem;
+    }
+
+    .sponsor-card {
+        min-width: 120px;
+        height: 70px;
+        padding: 0.75rem;
+    }
+
+    @keyframes sponsors-scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-50% - 0.5rem));
+        }
+    }
+}
+
+/* Touch drag support for sponsors scroller */
+@media (hover: none) and (pointer: coarse) {
+    .sponsors-scroller {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .sponsors-scroller::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sponsors-track {
+        animation: none;
+    }
+}
+
+/* Simple fade in up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeInUp .6s ease both;
+}

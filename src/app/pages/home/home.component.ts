@@ -112,9 +112,6 @@ import { DataService } from '../../services/data.service';
           <div class="sponsor-card">
             <img src="assets/pages/partner logos/teadot.png" alt="Tea Dot" class="sponsor-logo sponsor-logo--xxl" />
           </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/pacificPoke.png" alt="Pacific Poke" class="sponsor-logo sponsor-logo--pp-small" />
-          </div>
         </div>
 
         <!-- Duplicate set for seamless loop -->
@@ -124,9 +121,6 @@ import { DataService } from '../../services/data.service';
           </div>
           <div class="sponsor-card">
             <img src="assets/pages/partner logos/teadot.png" alt="Tea Dot" class="sponsor-logo sponsor-logo--xxl" />
-          </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/pacificPoke.png" alt="Pacific Poke" class="sponsor-logo sponsor-logo--pp-small" />
           </div>
         </div>
       </div>
@@ -414,20 +408,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     yearsRunning = new Date().getFullYear() - 2016;
 
     sponsors: string[] = [
-        'Juice Truck',
-        'JJ Bean',
-        'Bean Around The World',
-        'Guru',
-        'Body Energy Club',
-        'Hoochy Booch Kombucha',
-        'Booster Juice',
-        'Rain or Shine',
-        'Glory Juice',
-        'Poppi',
-        'Jo Deli',
         'Red Bull',
         'Tea Dot',
-        'Pacific Poke'
     ];
 
     constructor(private data: DataService) { }

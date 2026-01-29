@@ -107,36 +107,6 @@ import { DataService } from '../../services/data.service';
         <!-- First set of sponsors -->
         <div class="sponsors-group">
           <div class="sponsor-card">
-            <img src="assets/pages/partner logos/juiceTruck.png" alt="Juice Truck" class="sponsor-logo sponsor-logo--big" />
-          </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/JJBean.png" alt="JJ Bean" class="sponsor-logo" />
-          </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/beanAroundTheWorld.png" alt="Bean Around The World" class="sponsor-logo sponsor-logo--xxl" />
-          </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/guru.png" alt="Guru" class="sponsor-logo" />
-          </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/bodyEnergyClub.png" alt="Body Energy Club" class="sponsor-logo sponsor-logo--big" />
-          </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/hoochyBooch.png" alt="Hoochy Booch Kombucha" class="sponsor-logo sponsor-logo--xxl" />
-          </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/boosterJuice.avif" alt="Booster Juice" class="sponsor-logo" />
-          </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/rainOrShine.png" alt="Rain or Shine" class="sponsor-logo sponsor-logo--sm" />
-          </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/gloryJuice.png" alt="Glory Juice" class="sponsor-logo sponsor-logo--xxl" />
-          </div>
-          <div class="sponsor-card">
-            <img src="assets/pages/partner logos/joDeli.avif" alt="Jo Deli" class="sponsor-logo" />
-          </div>
-          <div class="sponsor-card">
             <img src="assets/pages/partner logos/redBull.png" alt="Red Bull" class="sponsor-logo" />
           </div>
           <div class="sponsor-card">

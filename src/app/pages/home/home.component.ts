@@ -112,6 +112,9 @@ import { DataService } from '../../services/data.service';
           <div class="sponsor-card">
             <img src="assets/pages/partner logos/teadot.png" alt="Tea Dot" class="sponsor-logo sponsor-logo--xxl" />
           </div>
+          <div class="sponsor-card">
+            <img src="assets/pages/partner logos/StevePoke.png" alt="Steve's Poke Bar" class="sponsor-logo" />
+          </div>
         </div>
 
         <!-- Duplicate set for seamless loop -->
@@ -121,6 +124,9 @@ import { DataService } from '../../services/data.service';
           </div>
           <div class="sponsor-card">
             <img src="assets/pages/partner logos/teadot.png" alt="Tea Dot" class="sponsor-logo sponsor-logo--xxl" />
+          </div>
+          <div class="sponsor-card">
+            <img src="assets/pages/partner logos/StevePoke.png" alt="Steve's Poke Bar" class="sponsor-logo" />
           </div>
         </div>
       </div>
@@ -410,6 +416,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     sponsors: string[] = [
         'Red Bull',
         'Tea Dot',
+        'Steve\'s Poke Bar'
     ];
 
     constructor(private data: DataService) { }

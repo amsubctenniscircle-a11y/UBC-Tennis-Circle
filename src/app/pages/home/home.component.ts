@@ -91,7 +91,7 @@ import { DataService } from '../../services/data.service';
         <div class="stat-icon-hero w-10 h-10 md:w-12 md:h-12 rounded-full mx-auto mb-2 md:mb-3 flex items-center justify-center">
           <img src="assets/handshake.svg" alt="Handshake icon" class="w-5 h-5 md:w-6 md:h-6 brightness-0 invert" />
         </div>
-        <div class="text-2xl md:text-4xl font-bold text-white">12</div>
+        <div class="text-2xl md:text-4xl font-bold text-white">8</div>
         <div class="text-xs md:text-sm text-white/80 mt-1">Partner Sponsors</div>
       </div>
     </div>

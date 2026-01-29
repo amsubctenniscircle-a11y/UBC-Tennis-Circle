@@ -134,9 +134,6 @@ import { DataService } from '../../services/data.service';
             <img src="assets/pages/partner logos/gloryJuice.png" alt="Glory Juice" class="sponsor-logo sponsor-logo--xxl" />
           </div>
           <div class="sponsor-card">
-            <img src="assets/pages/partner logos/poppi.svg" alt="Poppi" class="sponsor-logo sponsor-logo--sm" />
-          </div>
-          <div class="sponsor-card">
             <img src="assets/pages/partner logos/joDeli.avif" alt="Jo Deli" class="sponsor-logo" />
           </div>
           <div class="sponsor-card">

@@ -72,7 +72,7 @@ import { DataService } from '../../services/data.service';
             <line x1="3" y1="10" x2="21" y2="10"/>
           </svg>
         </div>
-        <div class="text-2xl md:text-4xl font-bold text-white">15+</div>
+        <div class="text-2xl md:text-4xl font-bold text-white">10+</div>
         <div class="text-xs md:text-sm text-white/80 mt-1">Events Per Year</div>
       </div>
 

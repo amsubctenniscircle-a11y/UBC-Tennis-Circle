@@ -291,7 +291,7 @@ import { DataService } from '../../services/data.service';
                     </div>
                 </div>
                 <div class="mt-6 relative z-10">
-                    <a href="http://docs.google.com/forms/d/e/1FAIpQLScLBPwS5roY4Dc-vf0VB0WZO7MioNhUtXOfJiTGAdNUB2rkjg/viewform" class="btn-primary w-full text-center rounded-full py-3 block">Join as Prime Member (Available September - November)</a>
+                    <a href="http://docs.google.com/forms/d/e/1FAIpQLScLBPwS5roY4Dc-vf0VB0WZO7MioNhUtXOfJiTGAdNUB2rkjg/viewform" class="btn-primary w-full text-center rounded-full py-3 block">Join as Prime Member (Available in September)</a>
                 </div>
             </div>
 

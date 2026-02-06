@@ -2,6 +2,18 @@ import { EventItem } from '../models/event';
 
 export const EVENTS: EventItem[] = [
     {
+        id: 'e29',
+        title: 'February Hitting Session',
+        date: '2026-02-06',
+        time: 'Session 1: 8-9 PM, Session 2: 9-10 PM',
+        location: 'UBC Tennis Bubble (Courts 10, 11, 12, 13)',
+        description: 'Join us for an exciting hitting session to ease the stress right before midterm week!',
+        imageUrl: 'assets/pages/events-banners/HSFeb.PNG',
+        registrationStatus: 'Full',
+        memberPrice: 15,
+        nonMemberPrice: 17,
+    },
+    {
         id: 'e28',
         title: 'UBC AMS Club Fair',
         date: '2026-01-29',

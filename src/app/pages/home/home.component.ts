@@ -92,7 +92,7 @@ import { DataService } from '../../services/data.service';
           <img src="assets/handshake.svg" alt="Handshake icon" class="w-5 h-5 md:w-6 md:h-6 brightness-0 invert" />
         </div>
         <div class="text-2xl md:text-4xl font-bold text-white">8</div>
-        <div class="text-xs md:text-sm text-white/80 mt-1">Partner Sponsors</div>
+        <div class="text-xs md:text-sm text-white/80 mt-1">Partners & Sponsors</div>
       </div>
     </div>
   </div>
@@ -101,7 +101,7 @@ import { DataService } from '../../services/data.service';
 <!-- Sponsors Scroller Section -->
 <section class="section-white py-8">
   <div class="container text-center">
-    <h2 class="text-2xl font-semibold text-[var(--ubc-deep-blue)] mb-6">Our Partners & Sponsors</h2>
+    <h2 class="text-2xl font-semibold text-[var(--ubc-deep-blue)] mb-6">Our Sponsors</h2>
     <div class="sponsors-scroller mt-2 pb-2">
       <div class="sponsors-track" #sponsorsTrack>
         <!-- First set of sponsors -->

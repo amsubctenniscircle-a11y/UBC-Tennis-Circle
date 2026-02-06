@@ -45,9 +45,14 @@
             </div>
           </div>
           <p class="event-description">{{ event.description }}</p>
-          <button class="event-button" [class.event-button-disabled]="event.registrationStatus !== 'Open'">
-            {{ event.registrationStatus === 'Open' ? 'Register Now' : event.registrationStatus }}
-          </button>
+          <ng-container *ngIf="event.registrationUrl; else statusButton">
+            <a class="event-button" [href]="event.registrationUrl" target="_blank" rel="noopener noreferrer">Register Now</a>
+          </ng-container>
+          <ng-template #statusButton>
+            <button class="event-button" [class.event-button-disabled]="event.registrationStatus !== 'Open'">
+              {{ event.registrationStatus === 'Open' ? 'Register Now' : event.registrationStatus }}
+            </button>
+          </ng-template>
         </div>
       </div>
     </div>

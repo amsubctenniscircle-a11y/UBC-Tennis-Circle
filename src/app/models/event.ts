@@ -10,6 +10,7 @@ export interface EventItem {
     description: string;
     imageUrl: string;
     registrationStatus: RegistrationStatus;
+    registrationUrl?: string; // optional link to a registration form
     memberPrice?: number; // Member price in dollars, optional
     nonMemberPrice?: number; // Non-member price in dollars, optional
 }
@@ -17,12 +18,12 @@ export interface EventItem {
 export function isPastEvent(e: EventItem): boolean {
     // Force local date parsing (YYYY-MM-DD)
     const [year, month, day] = e.date.toString().split('-').map(Number);
-  
+
     // End of the event day in LOCAL time
     const eventEnd = new Date(year, month - 1, day, 23, 59, 59, 999);
-  
+
     return new Date().getTime() > eventEnd.getTime();
   }
-  
-  
+
+
 

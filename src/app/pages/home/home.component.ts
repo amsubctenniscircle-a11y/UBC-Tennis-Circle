@@ -187,7 +187,12 @@ import { DataService } from '../../services/data.service';
                         </div>
                     </div>
                     <div class="mt-4 pt-3 border-t border-blue-100">
+                      <ng-container *ngIf="e.registrationUrl; else viewEventsLink">
+                        <a [href]="e.registrationUrl" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center">Register Now</a>
+                      </ng-container>
+                      <ng-template #viewEventsLink>
                         <a routerLink="/events" class="btn-cta w-full text-center">View Event</a>
+                      </ng-template>
                     </div>
                 </div>
             </div>

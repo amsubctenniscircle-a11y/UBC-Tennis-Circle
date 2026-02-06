@@ -107,26 +107,32 @@ import { DataService } from '../../services/data.service';
         <!-- First set of sponsors -->
         <div class="sponsors-group">
           <div class="sponsor-card">
-            <img src="assets/pages/partner logos/redBull.png" alt="Red Bull" class="sponsor-logo" />
+            <img src="assets/pages/partner logos/kintec.png" alt="Kintec" class="sponsor-logo" />
           </div>
           <div class="sponsor-card">
-            <img src="assets/pages/partner logos/teadot.png" alt="Tea Dot" class="sponsor-logo sponsor-logo--xxl" />
+            <img src="assets/pages/partner logos/healWellness.png" alt="Heal Wellness" class="sponsor-logo" />
           </div>
           <div class="sponsor-card">
-            <img src="assets/pages/partner logos/StevePoke.png" alt="Steve's Poke Bar" class="sponsor-logo" />
+            <img src="assets/pages/partner logos/healthCraft.png" alt="Health Craft Clinic" class="sponsor-logo" />
+          </div>
+          <div class="sponsor-card">
+            <img src="assets/pages/partner logos/racketsAndRunners.png" alt="Rackets & Runners" class="sponsor-logo" />
           </div>
         </div>
 
         <!-- Duplicate set for seamless loop -->
         <div class="sponsors-group">
           <div class="sponsor-card">
-            <img src="assets/pages/partner logos/redBull.png" alt="Red Bull" class="sponsor-logo" />
+            <img src="assets/pages/partner logos/kintec.png" alt="Kintec" class="sponsor-logo" />
           </div>
           <div class="sponsor-card">
-            <img src="assets/pages/partner logos/teadot.png" alt="Tea Dot" class="sponsor-logo sponsor-logo--xxl" />
+            <img src="assets/pages/partner logos/healWellness.png" alt="Heal Wellness" class="sponsor-logo" />
           </div>
           <div class="sponsor-card">
-            <img src="assets/pages/partner logos/StevePoke.png" alt="Steve's Poke Bar" class="sponsor-logo" />
+            <img src="assets/pages/partner logos/healthCraft.png" alt="Health Craft Clinic" class="sponsor-logo" />
+          </div>
+          <div class="sponsor-card">
+            <img src="assets/pages/partner logos/racketsAndRunners.png" alt="Rackets & Runners" class="sponsor-logo" />
           </div>
         </div>
       </div>
@@ -415,8 +421,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     sponsors: string[] = [
         'Red Bull',
-        'Tea Dot',
-        'Steve\'s Poke Bar'
+        'Heal Wellness',
+        'Rackets & Runners',
+        'Kintec',
+        'Health Craft Clinic'
     ];
 
     constructor(private data: DataService) { }

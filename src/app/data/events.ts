@@ -1,19 +1,7 @@
 import { EventItem } from '../models/event';
 
 export const EVENTS: EventItem[] = [
-    {
-        id: 'e29',
-        title: 'Spring Social Mixer',
-        date: '2026-03-15',
-        time: '6:00 PM – 9:00 PM',
-        location: 'UBC Tennis Bubble',
-        description: 'Join us for an evening of social tennis, music, and refreshments. Open to all — register to secure a spot!',
-        imageUrl: 'assets/pages/events-banners/hs5.jpg',
-        registrationStatus: 'Open',
-        registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScLBPwS5roY4Dc-vf0VB0WZO7MioNhUtXOfJiTGAdNUB2rkjg/viewform',
-        memberPrice: 0,
-        nonMemberPrice: 5,
-    },
+
     {
         id: 'e29',
         title: 'February Hitting Session',
@@ -22,7 +10,8 @@ export const EVENTS: EventItem[] = [
         location: 'UBC Tennis Bubble (Courts 10, 11, 12, 13)',
         description: 'Join us for an exciting hitting session to ease the stress right before midterm week!',
         imageUrl: 'assets/pages/events-banners/HSFeb.png',
-        registrationStatus: 'Full',
+        registrationStatus: 'Open',
+        registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScLBPwS5roY4Dc-vf0VB0WZO7MioNhUtXOfJiTGAdNUB2rkjg/viewform',
         memberPrice: 15,
         nonMemberPrice: 17,
     },

@@ -287,11 +287,11 @@ import { DataService } from '../../services/data.service';
                         <svg class="w-6 h-6 text-yellow-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
-                        <span class="text-sm font-semibold text-yellow-900">2 FREE beginner group tennis lessons with one of our instructors (coming soon)!</span>
+                        <span class="text-sm font-semibold text-yellow-900">2 FREE beginner group tennis lessons with one of our instructors!</span>
                     </div>
                 </div>
                 <div class="mt-6 relative z-10">
-                    <a href="http://docs.google.com/forms/d/e/1FAIpQLScLBPwS5roY4Dc-vf0VB0WZO7MioNhUtXOfJiTGAdNUB2rkjg/viewform" class="btn-primary w-full text-center rounded-full py-3 block">Join as Prime Member</a>
+                    <a href="http://docs.google.com/forms/d/e/1FAIpQLScLBPwS5roY4Dc-vf0VB0WZO7MioNhUtXOfJiTGAdNUB2rkjg/viewform" class="btn-primary w-full text-center rounded-full py-3 block">Join as Prime Member (Available September - November only)</a>
                 </div>
             </div>
 

@@ -8,7 +8,7 @@ export const EVENTS: EventItem[] = [
         time: '1:30 PM',
         location: 'Rumble Boxing Studio Richmond',
         description: 'Tennis or boxing? Why choose? 😎 Join us for our February Social at Rumble Boxing Richmond!',
-        imageUrl: 'assets/pages/events-banners/HSFeb.png',
+        imageUrl: 'assets/pages/events-banners/RumbleBoxingFeb.png',
         registrationStatus: 'Full',
         memberPrice: 0,
         nonMemberPrice: 0,

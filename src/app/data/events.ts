@@ -1,7 +1,18 @@
 import { EventItem } from '../models/event';
 
 export const EVENTS: EventItem[] = [
-
+    {
+        id: 'e30',
+        title: 'Rumble Boxing',
+        date: '2026-02-28',
+        time: '1:30 PM',
+        location: 'Rumble Boxing Studio Richmond',
+        description: 'Tennis or boxing? Why choose? 😎 Join us for our February Social at Rumble Boxing Richmond!',
+        imageUrl: 'assets/pages/events-banners/HSFeb.png',
+        registrationStatus: 'Full',
+        memberPrice: 0,
+        nonMemberPrice: 0,
+    },
     {
         id: 'e29',
         title: 'February Hitting Session',

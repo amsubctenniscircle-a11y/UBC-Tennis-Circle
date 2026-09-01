@@ -39,7 +39,7 @@ import { DataService } from '../../services/data.service';
       </p>
 
       <div class="mt-8 flex flex-col sm:flex-row gap-6">
-        <a href="http://docs.google.com/forms/d/e/1FAIpQLScLBPwS5roY4Dc-vf0VB0WZO7MioNhUtXOfJiTGAdNUB2rkjg/viewform" class="btn-primary rounded-full px-12 py-5 text-xl font-semibold">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScCnXPBXpxCrvp6MjPspbkarbvUJiGKmc0QGn38B_HmRVDztA/viewform" class="btn-primary rounded-full px-12 py-5 text-xl font-semibold">
           Become a Member
         </a>
         <a routerLink="/events" class="btn-secondary rounded-full px-12 py-5 text-xl font-semibold">

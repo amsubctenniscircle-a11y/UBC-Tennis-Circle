@@ -3,14 +3,14 @@
   <div class="events-banner">
     <div class="container">
       <h1 class="events-banner-title">Our Events</h1>
-      <p class="events-banner-subtitle">Join us for tournaments, hitting sessions, and social gatherings throughout the term.</p>
+      <p class="events-banner-subtitle">Join us for tournaments, hitting sessions and social gatherings throughout the term.</p>
     </div>
   </div>
 
-  <!-- Events Grid -->
-  <div class="container py-10">
+  <div class="container py-10" *ngIf="upcomingEvents.length > 0">
+    <h2 class="text-3xl font-bold text-[color:#0b1a2e] mb-6">Upcoming Events</h2>
     <div class="events-grid">
-      <div *ngFor="let event of upcomingEvents; let i = index" class="event-card animate-in" [style.animation-delay]="(i * 0.1) + 's'">
+      <div *ngFor="let event of upcomingEvents; let i = index" class="event-card animate-in" [class.event-card-featured]="upcomingEvents.length === 1" [style.animation-delay]="(i * 0.1) + 's'">
         <div class="event-image-container">
           <img [src]="event.imageUrl" [alt]="event.title" class="event-image" />
           <div class="event-date-badge">
@@ -44,9 +44,9 @@
               </div>
             </div>
           </div>
-          <p class="event-description">{{ event.description }}</p>
+          <div class="event-description event-description-upcoming" [innerHTML]="event.description"></div>
           <ng-container *ngIf="event.registrationUrl; else statusButton">
-            <a class="event-button" [href]="event.registrationUrl" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <a class="event-button" [href]="event.registrationUrl" target="_blank" rel="noopener noreferrer">Sign up now</a>
           </ng-container>
           <ng-template #statusButton>
             <button class="event-button" [class.event-button-disabled]="event.registrationStatus !== 'Open'">
@@ -76,7 +76,8 @@
     </div>
   </div>
 
-  <div *ngIf="upcomingEvents.length === 0" class="container text-center py-16">
+  <div *ngIf="upcomingEvents.length === 0" class="container text-center py-10">
+    <h2 class="text-3xl font-bold text-[color:#0b1a2e] mb-4">Upcoming Events</h2>
     <p class="text-lg opacity-70">No upcoming events at this time. Check back soon!</p>
   </div>
 </div>

@@ -1,7 +1,20 @@
 import { GalleryImage } from '../models/gallery-image';
 
 export const GALLERY: GalleryImage[] = [
-    
+    {
+    id: "g12",
+    url: "assets/pages/gallery-photos/imagine-day-1.jpg",
+    alt: "Imagine Day 2026 booth",
+    category: "Event",
+    event: "Imagine Day 2026",
+    },
+    {
+    id: "g13",
+    url: "assets/pages/gallery-photos/imagine-day-2.jpg",
+    alt: "Imagine Day 2026 table",
+    category: "Event",
+    event: "Imagine Day 2026",
+    },
     {
     id: "g1",
     url: "assets/pages/gallery-photos/1.JPG",

@@ -1,0 +1,68 @@
+<div class="contact-page">
+  <div class="page-banner">
+    <div class="container">
+      <h1 class="page-banner-title">Contact</h1>
+      <p class="page-banner-subtitle">Write to the team, find us on campus, or jump into the club socials.</p>
+    </div>
+  </div>
+
+  <div class="container pb-16">
+    <div class="contact-grid">
+      <div>
+        <form
+          class="contact-form"
+          [attr.action]="site.formSubmit"
+          method="POST"
+          accept-charset="UTF-8"
+        >
+          <input type="hidden" name="_subject" value="UBC Tennis Circle website enquiry" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input *ngIf="nextUrl" type="hidden" name="_next" [value]="nextUrl" />
+          <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" />
+          <p *ngIf="sent" class="contact-form-success">Thanks — your message is on its way to the team.</p>
+          <label>
+            Name *
+            <input name="name" type="text" required placeholder="Your name" />
+          </label>
+          <label>
+            Email *
+            <input name="email" type="email" required placeholder="you@ubc.ca" />
+          </label>
+          <label>
+            Subject
+            <input name="subject" type="text" placeholder="Membership, events, alumni, sponsorship…" />
+          </label>
+          <label>
+            Message *
+            <textarea name="message" rows="6" required placeholder="How can we help?"></textarea>
+          </label>
+          <button class="btn-primary rounded-full py-3" type="submit">Send message</button>
+        </form>
+      </div>
+
+      <aside class="contact-aside">
+        <div class="contact-card">
+          <h2>Location</h2>
+          <p>{{ site.addressLine1 }}<br />{{ site.addressLine2 }}</p>
+          <a [href]="'https://maps.google.com/?q=' + site.mapsQuery" target="_blank" rel="noopener noreferrer">Open in Maps</a>
+        </div>
+        <div class="contact-card">
+          <h2>Email</h2>
+          <p><a [href]="'mailto:' + site.email">{{ site.email }}</a></p>
+        </div>
+        <div class="contact-card">
+          <h2>Socials</h2>
+          <ul>
+            <li><a [href]="site.instagram" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a [href]="site.facebook" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a [href]="site.discord" target="_blank" rel="noopener noreferrer">Discord</a></li>
+          </ul>
+        </div>
+        <div class="contact-map">
+          <iframe title="UBC Tennis Circle location" [src]="mapSrc" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

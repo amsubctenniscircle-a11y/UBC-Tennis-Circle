@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div [ngClass]="isHome ? 'pt-0' : 'pt-24'">
+<div [ngClass]="isHome ? 'pt-0' : (data.nextUpcomingEvent() ? 'pt-36' : 'pt-28')">
     <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>

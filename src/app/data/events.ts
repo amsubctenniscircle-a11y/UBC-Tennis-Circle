@@ -2,6 +2,29 @@ import { EventItem } from '../models/event';
 
 export const EVENTS: EventItem[] = [
     {
+        id: 'e31',
+        title: '🎾 NEW TO TENNIS? 🎾',
+        date: '2026-11-05',
+        time: '4:00 PM – 5:00 PM',
+        location: 'Tennis Courts at Dunbar Community Centre (4747 Dunbar St, Vancouver, BC V6S 2H2)',
+        description: `
+            <p>Come learn the basics with us!</p>
+            <p>Prime Members get two free beginner lessons this 2026/2027 school year, and Lesson #2 is coming up!</p>
+            <p><br></p>
+            <p>📅 <strong>When:</strong> Thursday, November 5th from 4:00 - 5:00 pm</p>
+            <p>📍 <strong>Where:</strong> Tennis Courts at Dunbar Community Centre (4747 Dunbar St, Vancouver, BC V6S 2H2)</p>
+            <p>👥 <strong>Spots:</strong> 12 max (4 players per court, with a mentor exec on each)</p>
+            <p><br></p>
+            <p>Bring your own racket. Balls are provided!</p>
+            <p>🔗 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEsAk-GLPJueUQWZIp7quCuNp5clvC7SVepAhQw8G4plTP0g/viewform" target="_blank" rel="noopener noreferrer">Sign up now</a>! You'll need a screenshot of your Prime membership card.</p>
+        `,
+        imageUrl: 'assets/pages/events-banners/primeBeginner2.jpg',
+        registrationStatus: 'Open',
+        registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfEsAk-GLPJueUQWZIp7quCuNp5clvC7SVepAhQw8G4plTP0g/viewform',
+        memberPrice: 0,
+        nonMemberPrice: -1,
+    },
+    {
         id: 'e30',
         title: 'Rumble Boxing',
         date: '2026-02-28',

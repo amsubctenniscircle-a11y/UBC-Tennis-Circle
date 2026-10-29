@@ -1,0 +1,47 @@
+.join-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ubc-deep-blue);
+  margin-bottom: 0.75rem;
+}
+
+.join-lead {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+.join-next {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .join-next {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.join-next-card {
+  background: linear-gradient(135deg, var(--ubc-blue-700), var(--ubc-blue-500));
+  color: white;
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+
+.join-next-card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.join-next-card p {
+  opacity: 0.9;
+  margin-bottom: 1.25rem;
+}
+
+.join-next-card .btn-primary {
+  background: white;
+  color: var(--ubc-deep-blue);
+}

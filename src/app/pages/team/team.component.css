@@ -104,6 +104,45 @@
   opacity: 0.8;
 }
 
+.hitting-band {
+  display: grid;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, var(--ubc-blue-700), var(--ubc-blue-500));
+  color: white;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hitting-band {
+    grid-template-columns: 1.4fr auto;
+    padding: 2.5rem;
+  }
+}
+
+.hitting-band-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hitting-btn {
+  background: white;
+  color: var(--ubc-deep-blue);
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+}
+
+.hitting-btn-ghost {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
 /* Meet the Team Section */
 .about-team-section {
   margin-top: 6rem;
@@ -116,7 +155,17 @@
   font-weight: 700;
   color: var(--ubc-text);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-year-label {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--ubc-blue-600);
+  margin-bottom: 2.5rem;
 }
 
 /* Empty State */
@@ -174,7 +223,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
 }
 
 .team-card:hover {
@@ -184,12 +232,13 @@
 
 .team-photo-container {
   position: relative;
-  width: 180px;
-  height: 180px;
-  margin: 0 auto;
-  border-radius: 50%;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--ubc-blue-300), var(--ubc-blue-500));
+  background: var(--ubc-deep-blue);
+  text-decoration: none;
+  color: inherit;
 }
 
 .team-photo {
@@ -200,7 +249,7 @@
 }
 
 .team-card:hover .team-photo {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .team-content {
@@ -230,9 +279,16 @@
 
 .team-position {
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--ubc-text);
-  opacity: 0.8;
+  font-weight: 700;
+  color: var(--ubc-blue-600);
+  margin-bottom: 0.25rem;
+}
+
+.team-statement {
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  opacity: 0.78;
 }
 
 /* Animation */

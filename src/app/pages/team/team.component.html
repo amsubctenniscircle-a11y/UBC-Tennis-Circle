@@ -3,7 +3,7 @@
   <div class="about-banner">
     <div class="container">
       <h1 class="about-banner-title">About Us</h1>
-      <p class="about-banner-subtitle">Learn more about the UBC Tennis Club and the people behind it.</p>
+      <p class="about-banner-subtitle">Learn more about the UBC Tennis Circle and the people behind it.</p>
     </div>
   </div>
 
@@ -16,6 +16,7 @@
       <div class="about-section-content">
         <h2 class="about-section-title">Who We Are</h2>
         <p class="about-section-text">The UBC Tennis Club is a vibrant community of tennis enthusiasts at the University of British Columbia. We welcome players of all skill levels, from beginners picking up a racquet for the first time to competitive players looking to improve their game. Our club is built on the principles of inclusivity, sportsmanship, and a shared passion for tennis.</p>
+        <p class="about-section-text" style="margin-top: 1rem;">Have the same love for tennis as us? Join the AMS UBC Tennis Circle and take part in indoor and outdoor hitting sessions, member socials, tournaments, and more.</p>
       </div>
     </div>
 
@@ -30,24 +31,42 @@
       </div>
     </div>
 
-    <!-- Meet the Team Section -->
+    <div class="hitting-band">
+      <div>
+        <h2 class="about-section-title" style="color: white; margin-bottom: 0.75rem;">Join our hitting sessions</h2>
+        <p class="about-section-text" style="color: white; opacity: 0.92;">Indoor and outdoor rally nights, member socials, and tournaments run through the year. Members get early access. Prime members also get two beginner lessons.</p>
+      </div>
+      <div class="hitting-band-actions">
+        <a routerLink="/events" class="hitting-btn">See sessions</a>
+        <a routerLink="/join" class="hitting-btn hitting-btn-ghost">Become a member</a>
+      </div>
+    </div>
+
     <div class="about-team-section">
       <h2 class="about-team-title">Meet the Team</h2>
+      <p class="team-year-label">2026/2027</p>
       <div *ngIf="teamMembers.length === 0" class="team-empty">
         <div class="team-empty-icon">👥</div>
-        <h3 class="team-empty-title">Team Coming Soon</h3>
-        <p class="team-empty-text">Our team profiles are being prepared. Check back soon!</p>
+        <h3 class="team-empty-title">New exec team coming soon</h3>
+        <p class="team-empty-text">We are updating this roster. In the meantime, reach the club through the contact page.</p>
       </div>
 
       <div *ngIf="teamMembers.length > 0" class="team-grid">
         <div *ngFor="let member of teamMembers" class="team-card animate-in">
-          <div class="team-photo-container">
+          <a
+            class="team-photo-container"
+            [href]="'https://www.instagram.com/' + member.instagram + '/'"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="'Open Instagram for ' + member.name"
+          >
             <img [src]="member.photoUrl" [alt]="member.name" class="team-photo" />
-          </div>
+          </a>
           <div class="team-content">
             <h3 class="team-name">{{ member.name }}</h3>
-            <div class="team-year">{{ member.year }}</div>
             <div class="team-position">{{ member.position }}</div>
+            <div class="team-year">{{ member.year }}</div>
+            <p *ngIf="member.statement" class="team-statement">{{ member.statement }}</p>
           </div>
         </div>
       </div>

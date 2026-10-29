@@ -30,7 +30,9 @@ export class EventsComponent implements OnInit {
   }
 
   formatDate(date: string | Date): string {
-    const dateObj = typeof date === 'string' ? new Date(date) : date;
+    const raw = date.toString();
+    const [year, month, day] = raw.split('-').map(Number);
+    const dateObj = year && month && day ? new Date(year, month - 1, day) : new Date(date);
     return dateObj.toLocaleDateString('en-US', {
       month: 'short',
       day: 'numeric',

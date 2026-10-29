@@ -4,6 +4,7 @@ import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { NavbarComponent } from './components/navbar.component';
 import { FooterComponent } from './components/footer.component';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ import { FooterComponent } from './components/footer.component';
 })
 export class App {
   isHome = false;
-  constructor(private router: Router) {
+  constructor(private router: Router, readonly data: DataService) {
     this.isHome = this.router.url === '/' || this.router.url === '';
     this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((e) => {
       const url = (e as NavigationEnd).urlAfterRedirects;

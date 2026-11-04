@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { SITE } from '../../site';
 
@@ -15,15 +14,63 @@ export class ContactComponent {
   site = SITE;
   mapSrc: SafeResourceUrl;
   sent = false;
-  nextUrl = '';
+  sending = false;
+  error = '';
 
-  constructor(sanitizer: DomSanitizer, route: ActivatedRoute) {
+  constructor(sanitizer: DomSanitizer) {
     this.mapSrc = sanitizer.bypassSecurityTrustResourceUrl(
       `https://maps.google.com/maps?q=${encodeURIComponent(SITE.mapsQuery)}&z=16&output=embed`,
     );
-    this.sent = route.snapshot.queryParamMap.get('sent') === '1';
-    if (typeof window !== 'undefined') {
-      this.nextUrl = `${window.location.origin}/contact?sent=1`;
+  }
+
+  async onSubmit(event: Event) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    if (!form.reportValidity()) return;
+
+    this.sending = true;
+    this.sent = false;
+    this.error = '';
+
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const subject = String(data.get('subject') || '').trim() || 'Website enquiry';
+    const message = String(data.get('message') || '').trim();
+
+    if (!SITE.web3formsAccessKey) {
+      this.error = `Couldn't send that just now. Email ${SITE.email} and we'll get back to you.`;
+      this.sending = false;
+      return;
+    }
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: SITE.web3formsAccessKey,
+          from_name: 'UBC Tennis Circle website',
+          subject: `UBC Tennis Circle: ${subject}`,
+          name,
+          email,
+          replyto: email,
+          message,
+        }),
+      });
+      const payload = await res.json().catch(() => ({} as { success?: boolean; message?: string }));
+      if (!res.ok || payload.success !== true) {
+        throw new Error(payload.message || 'Could not send your message.');
+      }
+      this.sent = true;
+      form.reset();
+    } catch {
+      this.error = `Couldn't send that just now. Email ${SITE.email} and we'll get back to you.`;
+    } finally {
+      this.sending = false;
     }
   }
 }

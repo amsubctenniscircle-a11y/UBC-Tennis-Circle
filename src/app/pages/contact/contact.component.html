@@ -9,18 +9,10 @@
   <div class="container pb-16">
     <div class="contact-grid">
       <div>
-        <form
-          class="contact-form"
-          [attr.action]="site.formSubmit"
-          method="POST"
-          accept-charset="UTF-8"
-        >
-          <input type="hidden" name="_subject" value="UBC Tennis Circle website enquiry" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <input *ngIf="nextUrl" type="hidden" name="_next" [value]="nextUrl" />
-          <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" />
+        <form class="contact-form" ngNoForm (submit)="onSubmit($event)">
+          <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off" />
           <p *ngIf="sent" class="contact-form-success">Thanks — your message is on its way to the team.</p>
+          <p *ngIf="error" class="contact-form-error">{{ error }}</p>
           <label>
             Name *
             <input name="name" type="text" required placeholder="Your name" />
@@ -37,7 +29,9 @@
             Message *
             <textarea name="message" rows="6" required placeholder="How can we help?"></textarea>
           </label>
-          <button class="btn-primary rounded-full py-3" type="submit">Send message</button>
+          <button class="btn-primary rounded-full py-3" type="submit" [disabled]="sending">
+            {{ sending ? 'Sending…' : 'Send message' }}
+          </button>
         </form>
       </div>
 

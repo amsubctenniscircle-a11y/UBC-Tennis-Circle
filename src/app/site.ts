@@ -15,5 +15,5 @@ export const SITE = {
     'https://docs.google.com/forms/d/e/1FAIpQLScLBPwS5roY4Dc-vf0VB0WZO7MioNhUtXOfJiTGAdNUB2rkjg/viewform',
   mailingList:
     'https://docs.google.com/forms/d/e/1FAIpQLSfBkJ5mGsncq9e4zNz-POEX2W1qscYk-F49GD7YLUjI1QK0QQ/viewform',
-  formSubmit: 'https://formsubmit.co/amsubctenniscircle@gmail.com',
+  web3formsAccessKey: '0db6e2ec-b70d-433e-8281-ede33d0c8d31',
 };

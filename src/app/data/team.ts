@@ -97,7 +97,7 @@ export const TEAM: TeamMember[] = [
         year: 'Third Year',
         position: 'VP Events',
         photoUrl: 'assets/pages/team-photos/vedika-2026.jpg',
-        instagram: 'ved1ika',
+        instagram: 'ved1kajoshi',
         statement:
             'The miles queen. Sauder, specializing in Accounting. Tennis and running. 🏃‍♀️📊',
     },

@@ -47,12 +47,26 @@
   display: none !important;
 }
 
-.contact-form-success {
-  background: rgba(37, 99, 235, 0.08);
-  color: var(--ubc-deep-blue);
+.contact-form-success,
+.contact-form-error {
   font-weight: 600;
   padding: 0.75rem 0.9rem;
   border-radius: 0.5rem;
+}
+
+.contact-form-success {
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--ubc-deep-blue);
+}
+
+.contact-form-error {
+  background: rgba(185, 28, 28, 0.08);
+  color: #991b1b;
+}
+
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: wait;
 }
 
 .contact-aside {

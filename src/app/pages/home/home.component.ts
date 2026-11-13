@@ -138,7 +138,13 @@ import { SkillGuideComponent } from '../../components/skill-guide.component';
         </div>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div class="card overflow-hidden" *ngFor="let e of events">
-                <div class="relative h-28 md:h-32 overflow-hidden bg-gray-100">
+                <a
+                  class="relative h-28 md:h-32 overflow-hidden bg-gray-100 block"
+                  [href]="e.registrationUrl || '/events'"
+                  [attr.target]="e.registrationUrl ? '_blank' : null"
+                  [attr.rel]="e.registrationUrl ? 'noopener noreferrer' : null"
+                  [attr.aria-label]="e.registrationUrl ? 'Sign up for ' + e.title : e.title"
+                >
   <img
     [src]="e.imageUrl"
     [alt]="e.title"
@@ -152,7 +158,7 @@ import { SkillGuideComponent } from '../../components/skill-guide.component';
   <div class="absolute top-3 right-3 bg-[var(--ubc-blue-600)] text-white text-xs font-semibold rounded-full px-3 py-1">
     {{ eventCategory(e) }}
   </div>
-</div>
+</a>
                 <div class="p-5">
                     <div class="text-lg font-extrabold text-[var(--ubc-deep-blue)]">{{ e.title }}</div>
                     <div class="mt-3 grid gap-2 text-sm">

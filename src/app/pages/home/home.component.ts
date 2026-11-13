@@ -1,16 +1,16 @@
-import { Component, OnInit, AfterViewInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor, DatePipe } from '@angular/common';
 import type { EventItem } from '../../models/event';
 import { isListedUpcomingEvent } from '../../models/event';
 import { DataService } from '../../services/data.service';
 import { SkillGuideComponent } from '../../components/skill-guide.component';
+import { INSTAGRAM_POSTS } from '../../data/instagram';
 
 @Component({
     selector: 'app-home',
     standalone: true,
     imports: [RouterLink, NgIf, NgFor, DatePipe, SkillGuideComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     template: `
 <section class="relative w-full h-[100vh] overflow-hidden">
   <video
@@ -205,14 +205,27 @@ import { SkillGuideComponent } from '../../components/skill-guide.component';
       <app-skill-guide [compact]="true"></app-skill-guide>
     </section>
 
-    <section class="container mt-16">
-      <h2 class="text-2xl font-semibold text-left text-[var(--ubc-deep-blue)] mb-8">Latest on Instagram</h2>
-    </section>
-    <div style="display:block;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);">
-      <div class="px-4 sm:px-6 md:px-8 lg:px-0 xl:px-0">
-        <div data-behold-id="aZ67gOlP79kXj6a5t6Nx"></div>
+    <section class="mt-16">
+      <div class="container mb-8">
+        <h2 class="text-2xl font-semibold text-left text-[var(--ubc-deep-blue)]">Latest on Instagram</h2>
       </div>
-    </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
+        @for (post of instagramPosts; track post.url) {
+          <a
+            [href]="post.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative block overflow-hidden bg-slate-200 aspect-square"
+          >
+            <img
+              [src]="post.imageUrl"
+              [alt]="post.alt"
+              class="h-full w-full object-cover transition duration-300 group-hover:scale-105 group-hover:opacity-80"
+            />
+          </a>
+        }
+      </div>
+    </section>
 
     <section class="container mt-16 pb-16">
       <a routerLink="/about-us" class="group block rounded-lg bg-gradient-to-r from-[var(--ubc-blue-600)] to-[var(--ubc-blue-300)] text-white p-6 shadow flex items-center justify-between hover:opacity-95 hover:shadow-lg transition">
@@ -224,8 +237,9 @@ import { SkillGuideComponent } from '../../components/skill-guide.component';
     </section>
     `,
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
     events: EventItem[] = [];
+    instagramPosts = INSTAGRAM_POSTS;
     yearsRunning = new Date().getFullYear() - 2016;
 
     constructor(private data: DataService) { }
@@ -240,22 +254,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
             new Date(a.date).getTime() - new Date(b.date).getTime()
         )
         .slice(0, 3);
-    }
-
-    ngAfterViewInit(): void {
-        this.loadBeholdScript();
-    }
-
-    private loadBeholdScript(): void {
-        const src = 'https://w.behold.so/widget.js';
-        if (typeof document === 'undefined') return;
-        const existing = document.querySelector(`script[src="${src}"]`);
-        if (!existing) {
-            const s = document.createElement('script');
-            s.type = 'module';
-            s.src = src;
-            document.head.appendChild(s);
-        }
     }
 
     eventCategory(e: EventItem): string {

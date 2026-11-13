@@ -71,14 +71,20 @@
               <ng-container *ngIf="!event.mapsUrl">{{ event.location }}</ng-container>
             </div>
             <div class="event-pricing">
-              <div class="event-price-item">
-                <span class="event-price-label">Member:</span>
+              <div class="event-price-item" *ngIf="event.memberPrice === event.nonMemberPrice; else splitPrices">
+                <span class="event-price-label">Price:</span>
                 <span class="event-price-value">{{ formatPrice(event.memberPrice) }}</span>
               </div>
-              <div class="event-price-item">
-                <span class="event-price-label">Non-Member:</span>
-                <span class="event-price-value">{{ formatPrice(event.nonMemberPrice) }}</span>
-              </div>
+              <ng-template #splitPrices>
+                <div class="event-price-item">
+                  <span class="event-price-label">Member:</span>
+                  <span class="event-price-value">{{ formatPrice(event.memberPrice) }}</span>
+                </div>
+                <div class="event-price-item">
+                  <span class="event-price-label">Non-Member:</span>
+                  <span class="event-price-value">{{ formatPrice(event.nonMemberPrice) }}</span>
+                </div>
+              </ng-template>
             </div>
           </div>
           <div class="event-description event-description-upcoming" [innerHTML]="event.description"></div>

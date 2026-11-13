@@ -163,14 +163,14 @@ import { SkillGuideComponent } from '../../components/skill-guide.component';
                     <div class="text-lg font-extrabold text-[var(--ubc-deep-blue)]">{{ e.title }}</div>
                     <div class="mt-3 grid gap-2 text-sm">
                         <div class="flex items-center gap-2">
-                            <span class="text-blue-600 inline-flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-blue-100 text-[var(--ubc-blue-700)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .192.078.384.22.53l3.5 3.5a.75.75 0 1 0 1.06-1.06l-3.28-3.28V6Z" clip-rule="evenodd"/></svg>
                             </span>
                             <span>{{ e.time }}</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="text-blue-600 inline-flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 5-9 13-9 13S3 15 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-blue-100 text-[var(--ubc-blue-700)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd"/></svg>
                             </span>
                             <a *ngIf="e.mapsUrl" [href]="e.mapsUrl" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-[var(--ubc-blue-600)]">{{ e.location }}</a>
                             <span *ngIf="!e.mapsUrl">{{ e.location }}</span>

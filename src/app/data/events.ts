@@ -12,10 +12,11 @@ export const EVENTS: EventItem[] = [
         location: 'Court 13, UBC Tennis Centre / Bubble',
         mapsUrl: 'https://maps.google.com/?q=UBC+Tennis+Centre,+6133+University+Blvd,+Vancouver,+BC+V6T+1Z1',
         description: `
-            <p>Up to play a game tonight? We're happy to announce our next First-come, First-serve session, this time for levels 2.0/2.5!</p>
-            <p>All you have to do is sign-up, show-up, and play- we take care of everything else.</p>
-            <p>Each booking is designated solely for a specific skill-level.</p>
-            <p><br></p>
+            <ul>
+            <li>Up to play a game tonight? We're happy to announce our next First-come, First-serve session, this time for levels 2.0/2.5!</li>
+            <li>All you have to do is sign-up, show-up, and play- we take care of everything else.</li>
+            <li>Each booking is designated solely for a specific skill-level.</li>
+            </ul>
             <p>📢 We will do our best to give as much notice as possible (eg. release details/tickets the morning for evening bookings)</p>
             <p>🎟️ 4 tickets per booking</p>
             <p>✍️ Sign up below (limited!)</p>
@@ -52,8 +53,9 @@ export const EVENTS: EventItem[] = [
         location: 'UBC Tennis Bubble (Courts 10–13)',
         mapsUrl: 'https://maps.google.com/?q=UBC+Tennis+Centre,+6133+University+Blvd,+Vancouver,+BC+V6T+1Z1',
         description: `
-            <p>Another indoor hitting night at the Bubble. Courts are grouped by level so you play at your pace, whether you're new or you've been playing for years.</p>
-            <p><br></p>
+            <ul>
+            <li>Another indoor hitting night at the Bubble. Courts are grouped by level so you play at your pace, whether you're new or you've been playing for years.</li>
+            </ul>
             <p>📅 <strong>When:</strong> Friday, November 20th</p>
             <p>Session 1: 8:00–9:00 pm</p>
             <p>Session 2: 9:00–10:00 pm</p>

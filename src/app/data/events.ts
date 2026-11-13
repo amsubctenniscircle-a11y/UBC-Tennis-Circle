@@ -33,10 +33,10 @@ export const EVENTS: EventItem[] = [
             'assets/pages/events-banners/fcfs-3.jpg?v=2',
         ],
         registrationStatus: 'Open',
-        registrationUrl: 'https://forms.gle/7kSpRsrqfbPJ6dXr6',
+        registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf1YSdE30kbn6m5DhOZuWyzky_tTDPsvVobNaWiHjU-E8SrqA/viewform',
         memberPrice: 10,
         nonMemberPrice: 10,
-        // 6:20 AM on 13 Nov 2026, UTC-7 (current Pacific-offset clock).
+        // 6:20 AM on 13 Nov 2026, UTC-7.
         publishAt: '2026-11-13T06:20:00-07:00',
     },
     {

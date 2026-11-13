@@ -16,10 +16,10 @@ export const EVENTS: EventItem[] = [
             <p>All you have to do is sign-up, show-up, and play- we take care of everything else.</p>
             <p>Each booking is designated solely for a specific skill-level.</p>
             <p><br></p>
-            <p>🎾 We will do our best to give as much notice as possible (eg. release details/tickets the morning for evening bookings)</p>
-            <p>🎾 4 tickets per booking</p>
-            <p>🎾 Sign up below (limited!)</p>
-            <p>🎾 $10 per ticket</p>
+            <p>📢 We will do our best to give as much notice as possible (eg. release details/tickets the morning for evening bookings)</p>
+            <p>🎟️ 4 tickets per booking</p>
+            <p>✍️ Sign up below (limited!)</p>
+            <p>💵 $10 per ticket</p>
             <p><br></p>
             <p>‼️ EXECUTIVE MEMBERS WILL NOT BE PRESENT AT THESE SESSIONS</p>
             <p>‼️ You must bring your own balls AND racket. Unfortunately, since our exec members are not present for these sessions, we are unable to provide balls.</p>

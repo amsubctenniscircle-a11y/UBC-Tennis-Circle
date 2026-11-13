@@ -45,6 +45,49 @@ export const EVENTS: EventItem[] = [
         publishAt: '2026-11-13T06:20:00-07:00',
     },
     {
+        id: 'e33',
+        title: 'Indoor Hitting Session',
+        date: '2026-11-20',
+        time: 'Session 1: 8:00–9:00 PM · Session 2: 9:00–10:00 PM',
+        location: 'UBC Tennis Bubble (Courts 10–13)',
+        mapsUrl: 'https://maps.google.com/?q=UBC+Tennis+Centre,+6133+University+Blvd,+Vancouver,+BC+V6T+1Z1',
+        description: `
+            <p>Another indoor hitting night at the Bubble. Courts are grouped by level so you play at your pace, whether you're new or you've been playing for years.</p>
+            <p><br></p>
+            <p>📅 <strong>When:</strong> Friday, November 20th</p>
+            <p>Session 1: 8:00–9:00 pm</p>
+            <p>Session 2: 9:00–10:00 pm</p>
+            <p><br></p>
+            <p>📍 <strong>Where:</strong> <a href="https://maps.google.com/?q=UBC+Tennis+Centre,+6133+University+Blvd,+Vancouver,+BC+V6T+1Z1" target="_blank" rel="noopener noreferrer">UBC Tennis Bubble, courts 10–13</a></p>
+            <p>Court 10: under 2.0</p>
+            <p>Court 11: 2.0–2.5</p>
+            <p>Court 12: 3.0–3.5</p>
+            <p>Court 13: 4.0+</p>
+            <p><br></p>
+            <p>🎟️ 16 spots per session</p>
+            <p>🚫 No refunds</p>
+            <p>🎒 Bring your own racket</p>
+            <p>🎾 Balls are provided</p>
+            <p>🎁 Players get sponsor perks at the event</p>
+            <p><br></p>
+            <p>You'll get email confirmation. If it hasn't arrived within two days, email <a href="mailto:amsubctenniscircle@gmail.com">amsubctenniscircle@gmail.com</a>. Bring that confirmation with you to the event.</p>
+        `,
+        imageUrl: 'assets/pages/events-banners/hs-nov20.jpg?v=2',
+        registrationStatus: 'Open',
+        memberPrice: 15,
+        nonMemberPrice: 17,
+        signupLinks: [
+            {
+                label: 'Sign up for session 1',
+                url: 'https://docs.google.com/forms/d/e/1FAIpQLSexSlc_csnoKksdyehLK6dT85Kze6nZpmWUagHL-vIELKwhVg/viewform',
+            },
+            {
+                label: 'Sign up for session 2',
+                url: 'https://docs.google.com/forms/d/e/1FAIpQLSd4vZc4H3BLzyS21-_DV759s8ro9rTXUThs4h529HzvY5Lg0g/viewform',
+            },
+        ],
+    },
+    {
         id: 'e31',
         title: '🎾 NEW TO TENNIS? 🎾',
         date: '2026-11-05',

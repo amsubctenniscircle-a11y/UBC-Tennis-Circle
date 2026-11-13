@@ -1,0 +1,87 @@
+name: Publish scheduled site
+
+# Whole-site delay: work on `scheduled` goes to `main` only when publishAt is due.
+# Immediate work still pushes straight to `main`. Never mix the two.
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scheduled-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge scheduled into main if due
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if ! git ls-remote --exit-code --heads origin scheduled >/dev/null; then
+            echo "No scheduled branch. Nothing to publish."
+            exit 0
+          fi
+
+          git fetch origin scheduled
+          git checkout -B scheduled origin/scheduled
+
+          python3 << 'PY'
+          import json, sys
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          path = Path(".github/scheduled-release.json")
+          due = Path("/tmp/scheduled-due")
+          if due.exists():
+              due.unlink()
+
+          if not path.exists():
+              print("No scheduled-release.json on scheduled branch.")
+              sys.exit(0)
+
+          data = json.loads(path.read_text())
+          raw = data.get("publishAt")
+          if not raw:
+              print("publishAt is empty. Nothing to publish.")
+              sys.exit(0)
+
+          when = datetime.fromisoformat(raw)
+          if when.tzinfo is None:
+              raise SystemExit(f"publishAt must include an offset: {raw}")
+          now = datetime.now(timezone.utc)
+          print(f"now={now.isoformat()} publishAt={when.isoformat()}")
+          if now < when:
+              print("Not due yet.")
+              sys.exit(0)
+
+          path.write_text(json.dumps({"publishAt": None, "sourceBranch": "scheduled"}, indent=2) + "\n")
+          due.write_text("1")
+          PY
+
+          if [ ! -f /tmp/scheduled-due ]; then
+            exit 0
+          fi
+
+          git add .github/scheduled-release.json
+          git commit -m "Clear scheduled publish flag." || true
+
+          git checkout main
+          git pull origin main
+          git merge --no-edit scheduled -m "Publish scheduled site."
+          git push origin main
+          git push origin main:scheduled
+          echo "Published scheduled branch to main."

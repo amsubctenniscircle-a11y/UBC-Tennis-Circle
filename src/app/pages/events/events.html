@@ -57,16 +57,19 @@
           <h3 class="event-title">{{ event.title }}</h3>
           <div class="event-details">
             <div class="event-detail-item">
-              <svg class="event-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
+              <span class="event-icon-wrap" aria-hidden="true">
+                <svg class="event-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .192.078.384.22.53l3.5 3.5a.75.75 0 1 0 1.06-1.06l-3.28-3.28V6Z" clip-rule="evenodd" />
+                </svg>
+              </span>
               {{ event.time }}
             </div>
             <div class="event-detail-item">
-              <svg class="event-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
+              <span class="event-icon-wrap" aria-hidden="true">
+                <svg class="event-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                </svg>
+              </span>
               <a *ngIf="event.mapsUrl" class="event-location-link" [href]="event.mapsUrl" target="_blank" rel="noopener noreferrer">{{ event.location }}</a>
               <ng-container *ngIf="!event.mapsUrl">{{ event.location }}</ng-container>
             </div>

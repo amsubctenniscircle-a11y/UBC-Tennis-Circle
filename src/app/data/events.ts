@@ -12,10 +12,11 @@ export const EVENTS: EventItem[] = [
         location: 'Court 13, UBC Tennis Centre / Bubble',
         mapsUrl: 'https://maps.google.com/?q=UBC+Tennis+Centre,+6133+University+Blvd,+Vancouver,+BC+V6T+1Z1',
         description: `
-            <p>Up to play a game tonight? We're happy to announce our next First-come, First-serve session, this time for levels 2.0/2.5!</p>
-            <p>All you have to do is sign-up, show-up, and play- we take care of everything else.</p>
-            <p>Each booking is designated solely for a specific skill-level.</p>
-            <p><br></p>
+            <ul>
+            <li>Up to play a game tonight? We're happy to announce our next First-come, First-serve session, this time for levels 2.0/2.5!</li>
+            <li>All you have to do is sign-up, show-up, and play- we take care of everything else.</li>
+            <li>Each booking is designated solely for a specific skill-level.</li>
+            </ul>
             <p>📢 We will do our best to give as much notice as possible (eg. release details/tickets the morning for evening bookings)</p>
             <p>🎟️ 4 tickets per booking</p>
             <p>✍️ Sign up below (limited!)</p>

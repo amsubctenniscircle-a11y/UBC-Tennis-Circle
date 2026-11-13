@@ -53,12 +53,12 @@ export class ContactComponent {
         },
         body: JSON.stringify({
           access_key: SITE.web3formsAccessKey,
-          from_name: 'UBC Tennis Circle website',
-          subject: `UBC Tennis Circle: ${subject}`,
+          from_name: name,
+          subject,
           name,
           email,
           replyto: email,
-          message,
+          message: `${message}\n\n—\nFrom: ${name}\nReply to: ${email}`,
         }),
       });
       const payload = await res.json().catch(() => ({} as { success?: boolean; message?: string }));

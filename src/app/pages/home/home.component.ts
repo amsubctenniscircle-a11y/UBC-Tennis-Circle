@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, CUSTOM_ELEMENTS_SCHEMA } from '@angul
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor, DatePipe } from '@angular/common';
 import type { EventItem } from '../../models/event';
+import { isListedUpcomingEvent } from '../../models/event';
 import { DataService } from '../../services/data.service';
 import { SkillGuideComponent } from '../../components/skill-guide.component';
 
@@ -213,15 +214,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     ngOnInit() {
       const all = this.data.events();
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
 
       this.events = all
-        .filter(e => {
-          const [year, month, day] = e.date.toString().split('-').map(Number);
-          const eventDate = new Date(year, month - 1, day);
-          return eventDate >= today;
-        })
+        .filter(isListedUpcomingEvent)
         .sort(
           (a, b) =>
             new Date(a.date).getTime() - new Date(b.date).getTime()

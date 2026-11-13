@@ -4,7 +4,7 @@ import { PRODUCTS } from '../data/products';
 import { GALLERY } from '../data/gallery';
 import { TEAM } from '../data/team';
 import { FUN_FACTS } from '../data/facts';
-import { EventItem, isPastEvent } from '../models/event';
+import { EventItem, isListedUpcomingEvent } from '../models/event';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -16,7 +16,7 @@ export class DataService {
 
     nextUpcomingEvent(): EventItem | undefined {
         const upcoming = this.events()
-            .filter(e => !isPastEvent(e))
+            .filter(isListedUpcomingEvent)
             .sort((a, b) => this.eventDay(a.date) - this.eventDay(b.date));
         return upcoming.find(e => e.registrationStatus === 'Open') ?? upcoming[0];
     }

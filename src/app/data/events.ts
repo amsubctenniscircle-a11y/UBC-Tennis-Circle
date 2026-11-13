@@ -1,6 +1,44 @@
 import { EventItem } from '../models/event';
 
+// Optional publishAt: '2026-11-20T09:00:00-08:00' hides the event (banner, home, events)
+// until that Pacific time. Omit it to show as soon as we deploy.
+
 export const EVENTS: EventItem[] = [
+    {
+        id: 'e32',
+        title: 'Up to play a game tonight?',
+        date: '2026-11-13',
+        time: '10:00 PM – 11:00 PM',
+        location: 'Court 13, UBC Tennis Centre / Bubble',
+        description: `
+            <p>Up to play a game tonight? We're happy to announce our next First-come, First-serve session, this time for levels 2.0/2.5!</p>
+            <p>All you have to do is sign-up, show-up, and play- we take care of everything else.</p>
+            <p>Each booking is designated solely for a specific skill-level.</p>
+            <p>🎾 We will do our best to give as much notice as possible (eg. release details/tickets the morning for evening bookings)</p>
+            <p>🎾 4 tickets per booking</p>
+            <p>🎾 link for tickets in bio (limited!)</p>
+            <p>🎾 $10 per ticket</p>
+            <p>‼️ EXECUTIVE MEMBERS WILL NOT BE PRESENT AT THESE SESSIONS</p>
+            <p>‼️ You must bring your own balls AND racket. Unfortunately, since our exec members are not present for these sessions, we are unable to provide balls.</p>
+            <p>🎾 <strong>DETAILS FOR TONIGHT'S BOOKING:</strong></p>
+            <p><strong>When:</strong> 10-11 pm (Friday, November 13th)</p>
+            <p><strong>Where:</strong> Court 13 @ UBC Tennis Centre/Bubble</p>
+            <p><strong>What:</strong> This session is only for players who are levels 2.0/2.5</p>
+            <p><em>*You will receive email confirmation before the event*</em></p>
+        `,
+        imageUrl: 'assets/pages/events-banners/fcfs-1.jpg?v=2',
+        imageUrls: [
+            'assets/pages/events-banners/fcfs-1.jpg?v=2',
+            'assets/pages/events-banners/fcfs-2.jpg?v=2',
+            'assets/pages/events-banners/fcfs-3.jpg?v=2',
+        ],
+        registrationStatus: 'Open',
+        registrationUrl: 'https://forms.gle/7kSpRsrqfbPJ6dXr6',
+        memberPrice: 10,
+        nonMemberPrice: 10,
+        // 6:20 AM on 13 Nov 2026, UTC-7 (current Pacific-offset clock).
+        publishAt: '2026-11-13T06:20:00-07:00',
+    },
     {
         id: 'e31',
         title: '🎾 NEW TO TENNIS? 🎾',

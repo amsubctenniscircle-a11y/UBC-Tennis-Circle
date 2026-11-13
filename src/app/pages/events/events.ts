@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EventItem, isPastEvent } from '../../models/event';
+import { EventItem, eventImages, isListedUpcomingEvent, isPastEvent, isPublishedEvent } from '../../models/event';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class EventsComponent implements OnInit {
   allEvents: EventItem[] = [];
   upcomingEvents: EventItem[] = [];
   pastEvents: EventItem[] = [];
+  imageIndex: Record<string, number> = {};
 
   constructor(private data: DataService) { }
 
@@ -21,12 +22,42 @@ export class EventsComponent implements OnInit {
     this.allEvents = this.data.events();
 
     this.upcomingEvents = this.allEvents
-      .filter(e => !isPastEvent(e))
+      .filter(isListedUpcomingEvent)
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-  
+
     this.pastEvents = this.allEvents
-      .filter(e => isPastEvent(e))
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // newest first
+      .filter(e => isPublishedEvent(e) && isPastEvent(e))
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }
+
+  plainDescription(html: string): string {
+    return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  eventImages = eventImages;
+
+  hasGallery(event: EventItem): boolean {
+    return this.eventImages(event).length > 1;
+  }
+
+  currentImage(event: EventItem): string {
+    const images = this.eventImages(event);
+    return images[this.imageIndex[event.id] ?? 0] ?? event.imageUrl;
+  }
+
+  shiftImage(event: EventItem, direction: number, ev: Event): void {
+    ev.preventDefault();
+    ev.stopPropagation();
+    const images = this.eventImages(event);
+    if (images.length < 2) return;
+    const current = this.imageIndex[event.id] ?? 0;
+    this.imageIndex[event.id] = (current + direction + images.length) % images.length;
+  }
+
+  setImage(event: EventItem, index: number, ev: Event): void {
+    ev.preventDefault();
+    ev.stopPropagation();
+    this.imageIndex[event.id] = index;
   }
 
   formatDate(date: string | Date): string {

@@ -17,7 +17,7 @@ export const EVENTS: EventItem[] = [
             <p><br></p>
             <p>🎾 We will do our best to give as much notice as possible (eg. release details/tickets the morning for evening bookings)</p>
             <p>🎾 4 tickets per booking</p>
-            <p>🎾 link for tickets in bio (limited!)</p>
+            <p>🎾 Sign up below (limited!)</p>
             <p>🎾 $10 per ticket</p>
             <p><br></p>
             <p>‼️ EXECUTIVE MEMBERS WILL NOT BE PRESENT AT THESE SESSIONS</p>
@@ -30,11 +30,11 @@ export const EVENTS: EventItem[] = [
             <p><br></p>
             <p><em>You will receive email confirmation before the event.</em></p>
         `,
-        imageUrl: 'assets/pages/events-banners/fcfs-1.jpg?v=2',
+        imageUrl: 'assets/pages/events-banners/fcfs-1.jpg?v=3',
         imageUrls: [
-            'assets/pages/events-banners/fcfs-1.jpg?v=2',
-            'assets/pages/events-banners/fcfs-2.jpg?v=2',
-            'assets/pages/events-banners/fcfs-3.jpg?v=2',
+            'assets/pages/events-banners/fcfs-1.jpg?v=3',
+            'assets/pages/events-banners/fcfs-2.jpg?v=3',
+            'assets/pages/events-banners/fcfs-3.jpg?v=3',
         ],
         registrationStatus: 'Open',
         registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf1YSdE30kbn6m5DhOZuWyzky_tTDPsvVobNaWiHjU-E8SrqA/viewform',

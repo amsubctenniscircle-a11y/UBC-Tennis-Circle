@@ -28,7 +28,7 @@ export const EVENTS: EventItem[] = [
             <p><strong>Where:</strong> Court 13 @ UBC Tennis Centre/Bubble</p>
             <p><strong>What:</strong> This session is only for players who are levels 2.0/2.5</p>
             <p><br></p>
-            <p><em>You will receive email confirmation before the event</em></p>
+            <p><em>You will receive email confirmation before the event.</em></p>
         `,
         imageUrl: 'assets/pages/events-banners/fcfs-1.jpg?v=2',
         imageUrls: [

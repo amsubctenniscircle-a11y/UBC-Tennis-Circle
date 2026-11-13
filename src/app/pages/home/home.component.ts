@@ -172,15 +172,27 @@ import { SkillGuideComponent } from '../../components/skill-guide.component';
                             <span class="text-blue-600 inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 5-9 13-9 13S3 15 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             </span>
-                            <span>{{ e.location }}</span>
+                            <a *ngIf="e.mapsUrl" [href]="e.mapsUrl" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-[var(--ubc-blue-600)]">{{ e.location }}</a>
+                            <span *ngIf="!e.mapsUrl">{{ e.location }}</span>
                         </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-blue-100">
-                      <ng-container *ngIf="e.registrationUrl; else viewEventsLink">
-                        <a [href]="e.registrationUrl" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center">Register Now</a>
+                    <div class="mt-4 pt-3 border-t border-blue-100 grid gap-2">
+                      <ng-container *ngIf="e.signupLinks?.length; else singleHomeSignup">
+                        <a
+                          *ngFor="let link of e.signupLinks"
+                          [href]="link.url"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="btn-primary w-full text-center"
+                        >{{ link.label }}</a>
                       </ng-container>
-                      <ng-template #viewEventsLink>
-                        <a routerLink="/events" class="btn-cta w-full text-center">View Event</a>
+                      <ng-template #singleHomeSignup>
+                        <ng-container *ngIf="e.registrationUrl; else viewEventsLink">
+                          <a [href]="e.registrationUrl" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center">Register Now</a>
+                        </ng-container>
+                        <ng-template #viewEventsLink>
+                          <a routerLink="/events" class="btn-cta w-full text-center">View Event</a>
+                        </ng-template>
                       </ng-template>
                     </div>
                 </div>

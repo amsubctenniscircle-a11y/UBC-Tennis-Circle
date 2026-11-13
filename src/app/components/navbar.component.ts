@@ -95,7 +95,7 @@ export class NavbarComponent {
     const title = event.title.replace(/\p{Extended_Pictographic}/gu, '').replace(/\s+/g, ' ').trim();
     const when = [this.shortDate(event.date), this.shortTime(event.time)].filter(Boolean).join(', ');
     const place = event.location.split('(')[0].replace(/^Tennis Courts at\s+/i, '').trim();
-    const cta = event.registrationUrl ? 'Sign up →' : 'See details →';
+    const cta = (event.registrationUrl || event.signupLinks?.length) ? 'Sign up →' : 'See details →';
     return `Upcoming: ${title} · ${when} · ${place} · ${cta}`;
   }
 

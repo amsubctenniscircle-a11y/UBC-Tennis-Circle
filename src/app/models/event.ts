@@ -7,12 +7,14 @@ export interface EventItem {
     date: string | Date; // ISO date string
     time: string; // e.g., '6:00 PM - 8:00 PM'
     location: string;
+    mapsUrl?: string;
     description: string;
     imageUrl: string;
     // Extra photos for the events-page gallery. imageUrl stays the cover photo.
     imageUrls?: string[];
     registrationStatus: RegistrationStatus;
     registrationUrl?: string; // optional link to a registration form
+    signupLinks?: { label: string; url: string }[];
     memberPrice?: number; // Member price in dollars, optional
     nonMemberPrice?: number; // Non-member price in dollars, optional
     // ISO datetime with offset, e.g. '2026-11-15T09:00:00-08:00'.

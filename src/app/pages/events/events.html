@@ -9,7 +9,7 @@
 
   <div class="container py-10" *ngIf="upcomingEvents.length > 0">
     <h2 class="text-3xl font-bold text-[color:#0b1a2e] mb-6">Upcoming Events</h2>
-    <div class="events-grid">
+    <div class="events-grid" [class.events-grid-pair]="upcomingEvents.length === 2">
       <div *ngFor="let event of upcomingEvents; let i = index" class="event-card animate-in" [class.event-card-featured]="upcomingEvents.length === 1" [style.animation-delay]="(i * 0.1) + 's'">
         <div class="event-image-container" [class.event-image-gallery]="hasGallery(event)">
           <a
@@ -67,7 +67,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
               </svg>
-              {{ event.location }}
+              <a *ngIf="event.mapsUrl" class="event-location-link" [href]="event.mapsUrl" target="_blank" rel="noopener noreferrer">{{ event.location }}</a>
+              <ng-container *ngIf="!event.mapsUrl">{{ event.location }}</ng-container>
             </div>
             <div class="event-pricing">
               <div class="event-price-item">
@@ -81,13 +82,24 @@
             </div>
           </div>
           <div class="event-description event-description-upcoming" [innerHTML]="event.description"></div>
-          <ng-container *ngIf="event.registrationUrl; else statusButton">
-            <a class="event-button" [href]="event.registrationUrl" target="_blank" rel="noopener noreferrer">Sign up now</a>
-          </ng-container>
-          <ng-template #statusButton>
-            <button class="event-button" [class.event-button-disabled]="event.registrationStatus !== 'Open'">
-              {{ event.registrationStatus === 'Open' ? 'Register Now' : event.registrationStatus }}
-            </button>
+          <div class="event-button-row" *ngIf="event.signupLinks?.length; else singleSignup">
+            <a
+              *ngFor="let link of event.signupLinks"
+              class="event-button"
+              [href]="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >{{ link.label }}</a>
+          </div>
+          <ng-template #singleSignup>
+            <ng-container *ngIf="event.registrationUrl; else statusButton">
+              <a class="event-button" [href]="event.registrationUrl" target="_blank" rel="noopener noreferrer">Sign up now</a>
+            </ng-container>
+            <ng-template #statusButton>
+              <button class="event-button" [class.event-button-disabled]="event.registrationStatus !== 'Open'">
+                {{ event.registrationStatus === 'Open' ? 'Register Now' : event.registrationStatus }}
+              </button>
+            </ng-template>
           </ng-template>
         </div>
       </div>

@@ -10,6 +10,7 @@ export const EVENTS: EventItem[] = [
         date: '2026-11-13',
         time: '10:00 PM – 11:00 PM',
         location: 'Court 13, UBC Tennis Centre / Bubble',
+        mapsUrl: 'https://maps.google.com/?q=UBC+Tennis+Centre,+6133+University+Blvd,+Vancouver,+BC+V6T+1Z1',
         description: `
             <p>Up to play a game tonight? We're happy to announce our next First-come, First-serve session, this time for levels 2.0/2.5!</p>
             <p>All you have to do is sign-up, show-up, and play- we take care of everything else.</p>
@@ -25,7 +26,7 @@ export const EVENTS: EventItem[] = [
             <p><br></p>
             <p>🎾 <strong>DETAILS FOR TONIGHT'S BOOKING:</strong></p>
             <p><strong>When:</strong> 10-11 pm (Friday, November 13th)</p>
-            <p><strong>Where:</strong> Court 13 @ UBC Tennis Centre/Bubble</p>
+            <p><strong>Where:</strong> <a href="https://maps.google.com/?q=UBC+Tennis+Centre,+6133+University+Blvd,+Vancouver,+BC+V6T+1Z1" target="_blank" rel="noopener noreferrer">Court 13 @ UBC Tennis Centre/Bubble</a></p>
             <p><strong>What:</strong> This session is only for players who are levels 2.0/2.5</p>
             <p><br></p>
             <p><em>You will receive email confirmation before the event.</em></p>

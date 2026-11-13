@@ -14,17 +14,21 @@ export const EVENTS: EventItem[] = [
             <p>Up to play a game tonight? We're happy to announce our next First-come, First-serve session, this time for levels 2.0/2.5!</p>
             <p>All you have to do is sign-up, show-up, and play- we take care of everything else.</p>
             <p>Each booking is designated solely for a specific skill-level.</p>
+            <p><br></p>
             <p>🎾 We will do our best to give as much notice as possible (eg. release details/tickets the morning for evening bookings)</p>
             <p>🎾 4 tickets per booking</p>
             <p>🎾 link for tickets in bio (limited!)</p>
             <p>🎾 $10 per ticket</p>
+            <p><br></p>
             <p>‼️ EXECUTIVE MEMBERS WILL NOT BE PRESENT AT THESE SESSIONS</p>
             <p>‼️ You must bring your own balls AND racket. Unfortunately, since our exec members are not present for these sessions, we are unable to provide balls.</p>
+            <p><br></p>
             <p>🎾 <strong>DETAILS FOR TONIGHT'S BOOKING:</strong></p>
             <p><strong>When:</strong> 10-11 pm (Friday, November 13th)</p>
             <p><strong>Where:</strong> Court 13 @ UBC Tennis Centre/Bubble</p>
             <p><strong>What:</strong> This session is only for players who are levels 2.0/2.5</p>
-            <p><em>*You will receive email confirmation before the event*</em></p>
+            <p><br></p>
+            <p><em>You will receive email confirmation before the event</em></p>
         `,
         imageUrl: 'assets/pages/events-banners/fcfs-1.jpg?v=2',
         imageUrls: [

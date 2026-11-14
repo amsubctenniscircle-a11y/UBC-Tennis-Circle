@@ -94,26 +94,23 @@
 
 .event-card-featured {
   grid-column: 1 / -1;
+  height: auto;
+  /* Keep the square poster beside the copy, not oversized. */
 }
 
 @media (min-width: 768px) {
   .event-card-featured {
     display: grid;
-    grid-template-columns: 1.15fr 1fr;
+    grid-template-columns: minmax(240px, 420px) minmax(0, 1fr);
+    align-items: start;
     flex-direction: unset;
-  }
-
-  .event-card-featured .event-image-container {
-    align-self: stretch;
-    height: auto;
-    min-height: 0;
-    background: #0b1a2e;
   }
 
   .event-card-featured .event-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    min-width: 0;
   }
 
   .event-card-featured:hover {
@@ -132,15 +129,6 @@
   height: auto;
   aspect-ratio: 1 / 1;
   background: #0b1a2e;
-}
-
-.event-card-featured .event-image-container .event-image {
-  object-fit: contain;
-  object-position: center;
-}
-
-.event-card-featured:hover .event-image {
-  transform: none;
 }
 
 .event-image-gallery {
@@ -185,6 +173,13 @@
 
 .event-card:hover .event-image {
   transform: scale(1.1);
+}
+
+.event-card-featured .event-image-container .event-image,
+.event-card-featured:hover .event-image {
+  object-fit: contain;
+  object-position: center;
+  transform: none;
 }
 
 .event-image-contain {

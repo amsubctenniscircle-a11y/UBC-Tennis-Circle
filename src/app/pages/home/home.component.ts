@@ -139,7 +139,7 @@ import { SkillGuideComponent } from '../../components/skill-guide.component';
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div class="card overflow-hidden" *ngFor="let e of events">
                 <a
-                  class="relative h-28 md:h-32 overflow-hidden bg-gray-100 block"
+                  class="relative h-28 md:h-32 overflow-hidden bg-[var(--ubc-deep-blue)] block"
                   [href]="e.registrationUrl || '/events'"
                   [attr.target]="e.registrationUrl ? '_blank' : null"
                   [attr.rel]="e.registrationUrl ? 'noopener noreferrer' : null"
@@ -148,7 +148,7 @@ import { SkillGuideComponent } from '../../components/skill-guide.component';
   <img
     [src]="e.imageUrl"
     [alt]="e.title"
-    class="absolute inset-0 w-full h-full object-cover"
+    class="absolute inset-0 w-full h-full object-contain"
   />
   <div class="absolute inset-0 bg-black/30"></div>
   <div class="absolute top-3 left-3 bg-white text-[var(--ubc-deep-blue)] rounded-lg shadow px-3 py-2 text-center">
@@ -177,6 +177,10 @@ import { SkillGuideComponent } from '../../components/skill-guide.component';
                         </div>
                     </div>
                     <div class="mt-4 pt-3 border-t border-blue-100 grid gap-2">
+                      <ng-container *ngIf="e.registrationStatus === 'Full'; else homeSignup">
+                        <span class="btn-primary w-full text-center opacity-50 pointer-events-none">Spots are full</span>
+                      </ng-container>
+                      <ng-template #homeSignup>
                       <ng-container *ngIf="e.signupLinks?.length; else singleHomeSignup">
                         <a
                           *ngFor="let link of e.signupLinks"
@@ -193,6 +197,7 @@ import { SkillGuideComponent } from '../../components/skill-guide.component';
                         <ng-template #viewEventsLink>
                           <a routerLink="/events" class="btn-cta w-full text-center">View Event</a>
                         </ng-template>
+                      </ng-template>
                       </ng-template>
                     </div>
                 </div>

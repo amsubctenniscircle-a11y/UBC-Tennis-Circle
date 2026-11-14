@@ -104,8 +104,9 @@
   }
 
   .event-card-featured .event-image-container {
-    height: 100%;
-    min-height: 560px;
+    align-self: stretch;
+    height: auto;
+    min-height: 0;
     background: #0b1a2e;
   }
 
@@ -125,6 +126,21 @@
   position: relative;
   height: 12rem;
   overflow: hidden;
+}
+
+.event-card-featured .event-image-container {
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background: #0b1a2e;
+}
+
+.event-card-featured .event-image-container .event-image {
+  object-fit: contain;
+  object-position: center;
+}
+
+.event-card-featured:hover .event-image {
+  transform: none;
 }
 
 .event-image-gallery {
@@ -445,6 +461,11 @@
 @media (max-width: 640px) {
   .event-image-container {
     height: 10rem;
+  }
+
+  .event-card-featured .event-image-container {
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
   
   .event-content {

@@ -20,10 +20,10 @@
             rel="noopener noreferrer"
             [attr.aria-label]="'Sign up for ' + event.title"
           >
-            <img [src]="currentImage(event)" [alt]="event.title" class="event-image" [class.event-image-contain]="hasGallery(event)" />
+            <img [src]="currentImage(event)" [alt]="event.title" class="event-image" [class.event-image-contain]="hasGallery(event) || upcomingEvents.length === 1" />
           </a>
           <ng-template #eventPhoto>
-            <img [src]="currentImage(event)" [alt]="event.title" class="event-image" [class.event-image-contain]="hasGallery(event)" />
+            <img [src]="currentImage(event)" [alt]="event.title" class="event-image" [class.event-image-contain]="hasGallery(event) || upcomingEvents.length === 1" />
           </ng-template>
           <button
             *ngIf="hasGallery(event)"
@@ -91,6 +91,10 @@
             </div>
           </div>
           <div class="event-description event-description-upcoming" [innerHTML]="event.description"></div>
+          <ng-container *ngIf="event.registrationStatus === 'Full'; else signupOpen">
+            <button type="button" class="event-button event-button-disabled" disabled>Spots are full</button>
+          </ng-container>
+          <ng-template #signupOpen>
           <div class="event-button-row" *ngIf="event.signupLinks?.length; else singleSignup">
             <a
               *ngFor="let link of event.signupLinks"
@@ -109,6 +113,7 @@
                 {{ event.registrationStatus === 'Open' ? 'Register Now' : event.registrationStatus }}
               </button>
             </ng-template>
+          </ng-template>
           </ng-template>
         </div>
       </div>

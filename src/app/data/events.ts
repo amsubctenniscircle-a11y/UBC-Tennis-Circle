@@ -75,19 +75,9 @@ export const EVENTS: EventItem[] = [
             <p>You'll get email confirmation. If it hasn't arrived within two days, email <a href="mailto:amsubctenniscircle@gmail.com">amsubctenniscircle@gmail.com</a>. Bring that confirmation with you to the event.</p>
         `,
         imageUrl: 'assets/pages/events-banners/hs-nov20.jpg?v=2',
-        registrationStatus: 'Open',
+        registrationStatus: 'Full',
         memberPrice: 15,
         nonMemberPrice: 17,
-        signupLinks: [
-            {
-                label: 'Sign up for session 1',
-                url: 'https://docs.google.com/forms/d/e/1FAIpQLSexSlc_csnoKksdyehLK6dT85Kze6nZpmWUagHL-vIELKwhVg/viewform',
-            },
-            {
-                label: 'Sign up for session 2',
-                url: 'https://docs.google.com/forms/d/e/1FAIpQLSd4vZc4H3BLzyS21-_DV759s8ro9rTXUThs4h529HzvY5Lg0g/viewform',
-            },
-        ],
     },
     {
         id: 'e31',
